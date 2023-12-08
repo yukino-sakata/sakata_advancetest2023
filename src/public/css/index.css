@@ -27,6 +27,15 @@
     color: red;
 }
 
+.form__input--text-postcode::before {
+    content: "〒";
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    padding: 0 10px;
+}
+
 .contact-form__name-input {
     margin: 0 3%;
     width: 37%;
@@ -37,6 +46,14 @@
 
 .contact-form__item-input {
     width: 80%;
+    height: 40px;
+    justify-content: center;
+    border: solid 1px #AAA;
+    border-radius: 5px;
+}
+
+.contact-form__item-input-postcode {
+    width: 73%;
     height: 40px;
     justify-content: center;
     border: solid 1px #AAA;
@@ -76,7 +93,7 @@
     margin-right: 10px;
 }
 
-.contact-form__gender-input:checked +span::after {
+.contact-form__gender-input:checked+ span::after {
     display: block;
     position: absolute;
     content: "";
@@ -98,3 +115,12 @@
     padding: 0 10px;
 }
 
+.form__button-submit{
+    width: 150px;
+    height: 40px;
+    background: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #FFF;
+}

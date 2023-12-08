@@ -40,14 +40,14 @@
             <div class="form__group-content">
                 <div class="form__group-radio-container">
                     <div class="form__input--radio">
-                        <label class="input-label__select-gender" for="men">
-                            <input class="contact-form__gender-input" type="radio" name="gender" value="{{ old('gender') }}" />
+                        <label class="input-label__select-gender" for="male">
+                            <input class="contact-form__gender-input" type="radio" name="gender" value="{{ old('gender') }}" id="male" checked="checked" />
                                 <span class="gender-label">男性</span>
                         </label>
                     </div>
                     <div class="form__input--radio">
-                        <label class="input-label__select-gender" for="men">
-                            <input class="contact-form__gender-input" type="radio" name="gender" value="{{ old('gender') }}" />
+                        <label class="input-label__select-gender" for="female">
+                            <input class="contact-form__gender-input" type="radio" name="gender" id="female" value="{{ old('gender') }}" />
                                 <span class="gender-label">女性</span>
                         </label>
                     </div>
@@ -81,8 +81,8 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <div class="form__input--text">
-                    <input class="contact-form__item-input" type="postcode" name="postcode" value="{{ old('postcode') }}" />
+                <div class="form__input--text-postcode">
+                    <input class="contact-form__item-input-postcode" type="postcode" name="postcode" value="{{ old('postcode') }}" />
                 </div>
                 <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
