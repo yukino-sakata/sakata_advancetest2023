@@ -22,8 +22,8 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="first_name" value="{{ old('name') }}" />
-                    <input type="text" name="last_name" value="{{ old('name') }}" />
+                    <input class="contact-form__name-input" type="text" name="first_name" value="{{ old('name') }}" />
+                    <input class="contact-form__name-input" type="text" name="last_name" value="{{ old('name') }}" />
                 </div>
                 <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
@@ -38,13 +38,19 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <div class="form__input--radio">
-                    <input type="radio" name="gender" value="{{ old('gender') }}" />
-                    <label for="men">男性</label>
-                </div>
-                <div class="form__input--radio">
-                    <input type="radio" name="gender" value="{{ old('gender') }}" />
-                    <label for="men">女性</label>
+                <div class="form__group-radio-container">
+                    <div class="form__input--radio">
+                        <label class="input-label__select-gender" for="men">
+                            <input class="contact-form__gender-input" type="radio" name="gender" value="{{ old('gender') }}" />
+                                <span class="gender-label">男性</span>
+                        </label>
+                    </div>
+                    <div class="form__input--radio">
+                        <label class="input-label__select-gender" for="men">
+                            <input class="contact-form__gender-input" type="radio" name="gender" value="{{ old('gender') }}" />
+                                <span class="gender-label">女性</span>
+                        </label>
+                    </div>
                 </div>
                 <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
@@ -60,7 +66,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="email" name="email" value="{{ old('email') }}" />
+                    <input class="contact-form__item-input" type="email" name="email" value="{{ old('email') }}" />
                 </div>
                 <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
@@ -76,7 +82,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="postcode" name="postcode" value="{{ old('postcode') }}" />
+                    <input class="contact-form__item-input" type="postcode" name="postcode" value="{{ old('postcode') }}" />
                 </div>
                 <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
@@ -92,7 +98,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="address" value="{{ old('address') }}" />
+                    <input class="contact-form__item-input" type="text" name="address" value="{{ old('address') }}" />
                 </div>
                 <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
@@ -107,7 +113,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="building_name" value="{{ old('building_name') }}" />
+                    <input class="contact-form__item-input" type="text" name="building_name" value="{{ old('building_name') }}" />
                 </div>
                 <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
@@ -123,7 +129,7 @@
           </div>
           <div class="form__group-content">
             <div class="form__input--textarea">
-              <textarea name="content" value="{{ old('content') }}"></textarea>
+              <textarea class="contact-form__item-input" name="content" value="{{ old('content') }}"></textarea>
             </div>
           </div>
         </div>
