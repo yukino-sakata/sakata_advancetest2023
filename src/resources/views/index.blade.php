@@ -13,7 +13,7 @@
     </header>
 
     <div class="contact-form__content">
-      <form class="form" action="/confirm" method="post">
+      <form class="form" action="/contacts/confirm" method="post">
         @csrf
         <!--名前-->
         <div class="form__group">
@@ -47,14 +47,14 @@
             <div class="form__group-content">
                 <div class="form__group-radio-container">
                     <div class="form__input--radio">
-                        <label class="input-label__select-gender" for="male">
-                            <input class="contact-form__gender-input" type="radio" name="gender" value="{{ old('gender') }}" id="male" checked="checked" />
+                        <label class="input-label__select-gender">
+                            <input class="contact-form__gender-input" type="radio" name="gender" value="男性" id="1" checked="checked" />
                                 <span class="gender-label">男性</span>
                         </label>
                     </div>
                     <div class="form__input--radio">
                         <label class="input-label__select-gender" for="female">
-                            <input class="contact-form__gender-input" type="radio" name="gender" id="female" value="{{ old('gender') }}" />
+                            <input class="contact-form__gender-input" type="radio" name="gender" id="2" value="女性" />
                                 <span class="gender-label">女性</span>
                         </label>
                     </div>

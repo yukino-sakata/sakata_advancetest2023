@@ -5,9 +5,10 @@
 @endsection
 
 @section('content')
-<p class="thanks__message">ご意見いただきありがとうございました。</p>
-
-<div class="form__button">
-    <button class="form__button-submit" type="submit">トップページへ</button>
+<div class="content__thanks">
+    <p class="thanks__message">ご意見いただきありがとうございました。</p>
+    <div class="form__button">
+        <button class="form__button-submit" type="submit">トップページへ</button>
+    </div>
 </div>
 @endsection

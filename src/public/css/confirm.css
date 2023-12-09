@@ -6,19 +6,36 @@
     width: 100%;
 }
 
-.confirm-table__header {
+.confirm-table__header{
     width: 30%;
-    font-size: 14px;
     height: 70px;
+    font-size: 14px;
     padding: 10px 0 0 0;
     text-align: left;
 }
 
-.confirm-table__text {
+.confirm-table__header--textarea {
+    width: 30%;
+    font-size: 14px;
+    padding: 0 0 50px 0;
+    text-align: left;
+}
+
+.confirm-table__text{
     width: 100%;
     text-align: left;
     font-size: 14px;
     padding: 10px 0 0 0;
+    text-wrap: wrap;
+}
+
+.confirm-table__textarea {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    padding: 10px 0 0 0;
+    text-wrap: wrap;
+    margin: 65px 0 0 0;
 }
 
 .form__button-submit {
@@ -40,6 +57,15 @@
 
 .confirm-table__text input {
     width: 100%;
+    outline: none;
+    border: none;
+}
+
+.confirm-table__textarea textarea {
+    width: 100%;
+    height: 100px;
+    margin: 25px 0 0 0;
+    overflow-wrap: break-all;
     outline: none;
     border: none;
 }

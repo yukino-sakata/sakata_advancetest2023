@@ -12,49 +12,50 @@
         </div>
     </header>
 
-    <form class="confirm__form" action="/thanks" method="post">
+    <form class="confirm__form" action="/contacts" method="post">
+    @csrf
         <div class="confirm__table">
             <table class="confirm__content">
                 <tr>
                     <th class="confirm-table__header">お名前</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="fullname" value="{{$contact['first_name'] }}　{{ $contact['last_name'] }}"/>
+                        <input type="text" name="fullname" value="{{$contact['first_name'] }}　{{ $contact['last_name'] }}" readonly/>
                     </td>
                 </tr>
                 <tr>
                     <th class="confirm-table__header">性別</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="gender" value="    {{$contact['gender']}}" />
+                        <input type="text" name="gender" value="{{$contact['gender']}}" readonly/>
                     </td>
                 </tr>
                 <tr>
                     <th class="confirm-table__header">メールアドレス</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="email" value="{{$contact['email']}}" />
+                        <input type="text" name="email" value="{{$contact['email']}}" readonly/>
                     </td>
                 </tr>
                 <tr>
                     <th class="confirm-table__header">郵便番号</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="postcode" value="{{$contact['postcode']}}" />
+                        <input type="text" name="postcode" value="{{$contact['postcode']}}" readonly/>
                     </td>
                 </tr>
                 <tr>
                     <th class="confirm-table__header">住所</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="address" value="{{$contact['address']}}" />
+                        <input type="text" name="address" value="{{$contact['address']}}" readonly/>
                     </td>
                 </tr>
                 <tr>
                     <th class="confirm-table__header">建物名</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="building_name" value="{{$contact['building_name']}}" />
+                        <input type="text" name="building_name" value="{{$contact['building_name']}}" readonly/>
                     </td>
                 </tr>
                 <tr>
-                    <th class="confirm-table__header">ご意見</th>
-                    <td class="confirm-table__text">
-                        <input type="text" name="opinion" value="{{$contact['opinion']}}" />
+                    <th class="confirm-table__header--textarea">ご意見</th>
+                    <td class="confirm-table__textarea">
+                        <textarea name="opinion" readonly>{{$contact['opinion']}}</textarea>
                     </td>
                 </tr>
             </table>
@@ -63,6 +64,6 @@
             <button class="form__button-submit" type="submit">送信</button>
         </div>
     </form>
-    <a href="/" class="fix__link">修正する</a>
+    <a href="/" class="fix__link" name="back" >修正する</a>
 
 @endsection

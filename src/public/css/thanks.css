@@ -1,3 +1,8 @@
+.content__thanks {
+    height: 800px;
+    padding: 50% 0;
+}
+
 .thanks__message {
     font-size: 14px;
 }
