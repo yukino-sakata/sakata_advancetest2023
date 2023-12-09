@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 @endsection
 
 @section('content')
@@ -13,7 +13,8 @@
     </header>
 
     <div class="contact-form__content">
-      <form class="form">
+      <form class="form" action="/confirm" method="post">
+        @csrf
         <!--名前-->
         <div class="form__group">
             <div class="form__group-title">
@@ -22,8 +23,8 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input class="contact-form__name-input" type="text" name="first-name" value="{{ old('first-name') }}" />
-                    <input class="contact-form__name-input" type="text" name="last-name" value="{{ old('last-name') }}" />
+                    <input class="contact-form__name-input" type="text" name="first_name" value="{{ old('first-name') }}" />
+                    <input class="contact-form__name-input" type="text" name="last_name" value="{{ old('last-name') }}" />
                 </div>
                 <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
@@ -155,7 +156,7 @@
           </div>
           <div class="form__group-content">
             <div class="form__input--textarea">
-              <textarea class="contact-form__textarea-input" name="content" value="{{ old('content') }}"></textarea>
+              <textarea class="contact-form__textarea-input" name="opinion" value="{{ old('content') }}"></textarea>
             </div>
           </div>
         </div>

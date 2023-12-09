@@ -1,0 +1,45 @@
+.header__title {
+    font-size: 24px;
+}
+
+.confirm__content {
+    width: 100%;
+}
+
+.confirm-table__header {
+    width: 30%;
+    font-size: 14px;
+    height: 70px;
+    padding: 10px 0 0 0;
+    text-align: left;
+}
+
+.confirm-table__text {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    padding: 10px 0 0 0;
+}
+
+.form__button-submit {
+    width: 150px;
+    height: 40px;
+    background: #000;
+    border: solid 1px #AAA;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #FFF;
+    margin: 30px 0 0 0;
+    font-weight: bold;
+}
+
+.fix__link {
+    color: #000;
+    font-size: 12px;
+}
+
+.confirm-table__text input {
+    width: 100%;
+    outline: none;
+    border: none;
+}
