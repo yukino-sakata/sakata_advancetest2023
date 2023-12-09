@@ -22,12 +22,18 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input class="contact-form__name-input" type="text" name="first_name" value="{{ old('name') }}" />
-                    <input class="contact-form__name-input" type="text" name="last_name" value="{{ old('name') }}" />
+                    <input class="contact-form__name-input" type="text" name="first-name" value="{{ old('first-name') }}" />
+                    <input class="contact-form__name-input" type="text" name="last-name" value="{{ old('last-name') }}" />
                 </div>
                 <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
                 </div>
+            </div>
+        </div>
+        <div class="form-sample__container">
+            <div class="form-sample__inner">
+                <p class="form__sample-item--name">例）山田</p>
+                <p class="form__sample-item--name">例）太郎</p>
             </div>
         </div>
         <!--名前-->
@@ -73,6 +79,11 @@
                 </div>
             </div>
         </div>
+        <div class="form-sample__container">
+            <div class="form-sample__inner">
+                <p class="form__sample-item">例）test@example.com</p>
+            </div>
+        </div>
         <!--メールアドれス-->
         <!--郵便版後-->
         <div class="form__group">
@@ -87,6 +98,11 @@
                 <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
                 </div>
+            </div>
+        </div>
+        <div class="form-sample__container">
+            <div class="form-sample__inner">
+                <p class="form__sample-item">　　　例）123-4567</p>
             </div>
         </div>
         <!--郵便番号-->
@@ -105,6 +121,11 @@
                 </div>
             </div>
         </div>
+        <div class="form-sample__container">
+            <div class="form-sample__inner">
+                <p class="form__sample-item">例）東京都渋谷区千駄ヶ谷1-2-3</p>
+            </div>
+        </div>
         <!--住所-->
         <!--建物名-->
         <div class="form__group">
@@ -120,6 +141,11 @@
                 </div>
             </div>
         </div>
+        <div class="form-sample__container">
+            <div class="form-sample__inner">
+                <p class="form__sample-item">例）千駄ヶ谷マンション101</p>
+            </div>
+        </div>
         <!--建物名-->
         <!--ご意見-->
         <div class="form__group">
@@ -129,7 +155,7 @@
           </div>
           <div class="form__group-content">
             <div class="form__input--textarea">
-              <textarea class="contact-form__item-input" name="content" value="{{ old('content') }}"></textarea>
+              <textarea class="contact-form__textarea-input" name="content" value="{{ old('content') }}"></textarea>
             </div>
           </div>
         </div>
