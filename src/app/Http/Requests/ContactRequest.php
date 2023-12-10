@@ -26,10 +26,13 @@ class ContactRequest extends FormRequest
         return [
             'first_name' => ['required', 'string'],
             'last_name' => ['required', 'string'],
-            'first_name' + 'last_name' => ['max:255'],
-            'gender' => ['required']
-
-
+            'fullname' => ['max:255'],
+            'gender' => ['required'],
+            'email' => ['required', 'email', 'max:255'],
+            'postcode' => ['required', '/^\d{3}[-]\d{4}$/', 'max:8'],
+            'address' => ['required', 'string', 'max:255'],
+            'building_name' => ['string', 'max:255'],
+            'opinion' => ['required', 'max:120']
         ];
     }
 }
