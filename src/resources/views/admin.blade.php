@@ -31,19 +31,19 @@
                         <div class="search-form__gender">
                             <p class="search-form__header--gender">性別</p>
                             <div class="search-form__gender-item">
-                                <label class="search-form__gender-label">
+                                <label class="search-form__gender-label" for="0">
                                     <input class="search__gender-input" type="radio" name="gender" id="0" value="全て" checked="checked" />
                                     <span class="gender-label">全て</span>
                                 </label>
                             </div>
                             <div class="search-form__gender-item">
-                                <label class="search-form__gender-label">
+                                <label class="search-form__gender-label" for="1">
                                     <input class="search__gender-input"         type="radio" name="gender" id="1" value="男性" />
                                     <span class="gender-label">男性</span>
                                 </label>
                             </div>
                             <div class="search-form__gender-item">
-                                <label class="search-form__gender-label">
+                                <label class="search-form__gender-label" for="2">
                                     <input class="search__gender-input" type="radio" name="gender" id="2" value="女性" />
                                         <span class="gender-label">女性</span>
                                 </label>
@@ -67,36 +67,39 @@
                     <div class="form__button">
                         <button class="form__button-submit" type="submit">検索</button>
                     </div>
-                <a href="/" class="fix__link" name="back" >リセット</a>
+                <a href="/admin" class="fix__link" name="back" >リセット</a>
                 </form>
             </div>
             <!--検索フォーム-->
             <!--テーブル-->
-            <div class="contact-table">
-                <table class="content__contact">
+            <div class="table-container">
+                <table class="contact-table">
                     <tr class="contact__header">
-                        <th class="contact-header__item">ID</th>
-                        <th class="contact-header__item">お名前</th>
-                        <th class="contact-header__item">性別</th>
-                        <th class="contact-header__item">メールアドレス</th>
-                        <th class="contact-header__item">ご意見</th>
+                        <th class="contact-header__item--id">ID</th>
+                        <th class="contact-header__item--name">お名前</th>
+                        <th class="contact-header__item--gender">性別</th>
+                        <th class="contact-header__item--email">メールアドレス</th>
+                        <th class="contact-header__item--opinion">ご意見</th>
                     </tr>
-                    @foreach ($contacts as $contact)
+                        @foreach ($contacts as $contact)
                     <tr class="contact__detail">
-                        <td class="contact-detail__item">{{ $contact->id }}</td>
-                        <td class="contact-detail__item">{{ $contact->name }}</td>
-                        <td class="contact-detail__item">{{ $contact->gender }}</td>
-                        <td class="contact-detail__item">{{ $contact->email }}</td>
-                        <td class="contact-detail__item">{{ $contact->opinion }}</td>
+                        <td class="contact-detail__item--id">{{ $contact->id }}</td>
+                        <td class="contact-detail__item--name">{{ $contact->fullname }}</td>
+                        <td class="contact-detail__item--gender">{{ $contact->gender }}</td>
+                        <td class="contact-detail__item--email">{{ $contact->email }}</td>
+                        <td class="contact-detail__item--opinion">
+                            <span class="tooltip" data-tooltip="{{ $contact->opinion }}">{{ $contact->opinion }}</span>
+                        </td>
                         <td class="delete__item">
                             <div class="delete__button">
                                 <button class="delete__button-submit" type="submit">削除</button>
                             </div>
                         </td>
                     </tr>
-                    @endforeach
+                @endforeach
                 </table>
             </div>
+        </div>
 
         </div>
     </main>

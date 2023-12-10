@@ -134,7 +134,7 @@
     margin-right: 10px;
 }
 
-.contact-form__gender-input:checked+ span::after {
+.contact-form__gender-input:checked + span::after {
     display: block;
     position: absolute;
     content: "";
