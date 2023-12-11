@@ -43,4 +43,19 @@ class ContactController extends Controller
         $contacts = Contact::all();
         return view('admin', ['contacts' => $contacts]);
     }
+
+    public function remove(Request $request){
+        Contact::find($request->id)->delete();
+        return redirect('admin');
+    }
+
+    public function search(Request $request){
+        $contacts = Contact::
+        NameSearch($request->search_name)
+        ->GenderSearch($request->search_gender)
+        ->EmailSearch($request->search_email)
+        ->get();
+
+        return view('admin', compact('contacts'));
+    }
 }

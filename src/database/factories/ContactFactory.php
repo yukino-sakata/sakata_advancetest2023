@@ -21,7 +21,7 @@ class ContactFactory extends Factory
         'postcode' => $this->faker->postcode(),
         'address' => $this->faker->address(),
         'building_name' => $this->faker->secondaryAddress(),
-        'opinion' => $this->faker->realText(254)
+        'opinion' => $this->faker->realText(120)
         ];
     }
 }

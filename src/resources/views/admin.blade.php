@@ -21,7 +21,7 @@
         <div class="content">
         <!--検索フォーム-->
             <div class="content__search-form">
-                <form class="search-form">
+                <form class="search-form" action="/search" method="get">
                 @csrf
                     <div class="search-form__items-row">
                         <div class="search-form__name">
@@ -32,19 +32,19 @@
                             <p class="search-form__header--gender">性別</p>
                             <div class="search-form__gender-item">
                                 <label class="search-form__gender-label" for="0">
-                                    <input class="search__gender-input" type="radio" name="gender" id="0" value="全て" checked="checked" />
+                                    <input class="search__gender-input" type="radio" name="search_gender" id="0" value="全て" checked="checked" />
                                     <span class="gender-label">全て</span>
                                 </label>
                             </div>
                             <div class="search-form__gender-item">
                                 <label class="search-form__gender-label" for="1">
-                                    <input class="search__gender-input"         type="radio" name="gender" id="1" value="男性" />
+                                    <input class="search__gender-input"         type="radio" name="search_gender" id="1" value="男性" />
                                     <span class="gender-label">男性</span>
                                 </label>
                             </div>
                             <div class="search-form__gender-item">
                                 <label class="search-form__gender-label" for="2">
-                                    <input class="search__gender-input" type="radio" name="gender" id="2" value="女性" />
+                                    <input class="search__gender-input" type="radio" name="search_gender" id="2" value="女性" />
                                         <span class="gender-label">女性</span>
                                 </label>
                             </div>
@@ -91,9 +91,10 @@
                             <span class="tooltip" data-tooltip="{{ $contact->opinion }}">{{ $contact->opinion }}</span>
                         </td>
                         <td class="delete__item">
-                            <div class="delete__button">
+                            <form class="delete__button" action="/delete?id={{$contact->id}}" method="POST">
+                                @csrf
                                 <button class="delete__button-submit" type="submit">削除</button>
-                            </div>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
