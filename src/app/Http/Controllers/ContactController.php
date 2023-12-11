@@ -53,6 +53,8 @@ class ContactController extends Controller
         $contacts = Contact::
         NameSearch($request->search_name)
         ->GenderSearch($request->search_gender)
+        ->DateFromSearch($request->search_date__from)
+        ->DateToSearch($request->search_date__to)
         ->EmailSearch($request->search_email)
         ->get();
 

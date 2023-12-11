@@ -33,6 +33,18 @@ class Contact extends Model
             }
         }
 
+        public function scopeDateFromSearch($query, $search_date__from){
+            if(!empty($search_date__from)) {
+            $query->where('created_at', '>=', "{$search_date__from}.00:00:00" );
+            }
+        }
+
+        public function scopeDateToSearch($query, $search_date__to){
+            if(!empty($search_date__to)) {
+            $query->where('created_at', '<=', "{$search_date__to}.23:59:59");
+            }
+        }
+
         public function scopeEmailSearch($query, $search_email)
         {
             if (!empty($search_email)) {

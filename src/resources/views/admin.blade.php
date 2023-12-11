@@ -53,9 +53,9 @@
                     <div class="search-form__items-row">
                         <div class="search-form__date">
                             <p class="search-form__header">登録日</p>
-                            <input class="search-form__date-input" type="calendar"  name="search_date__from">
+                            <input class="search-form__date-input" type="date"  name="search_date__from">
                             <p class="search_date__text">〜</p>
-                            <input class="search-form__date-input" type="calendar" name="search_date__to">
+                            <input class="search-form__date-input" type="date" name="search_date__to">
                         </div>
                     </div>
                     <div class="search-form__items-row">
