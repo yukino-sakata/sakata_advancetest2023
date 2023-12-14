@@ -64,6 +64,9 @@
             <button class="form__button-submit" type="submit">送信</button>
         </div>
     </form>
-    <a href="/" class="fix__link" name="back" >修正する</a>
+    <div class="fix__link">
+        @csrf
+        <button type="button" onClick="history.back()" class="fix-link__button" name="back" >修正する</button>
+    </div>
 
 @endsection

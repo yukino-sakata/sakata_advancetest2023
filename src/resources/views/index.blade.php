@@ -23,12 +23,23 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input class="contact-form__name-input" type="text" name="first_name" value="{{ old('first-name') }}" />
-                    <input class="contact-form__name-input" type="text" name="last_name" value="{{ old('last-name') }}" />
+                    <input class="contact-form__name-input" type="text" name="first_name" value="{{ old('first_name') }}" />
+                    <input class="contact-form__name-input" type="text" name="last_name" value="{{ old('last_name') }}" />
                 </div>
-                <div class="form__error">
-                <!--バリデーション機能を実装したら記述します。-->
+                @if ($errors->has('first_name'))
+                <div class="error">
+                    <ul>
+                        <li>{{$errors->first('first_name')}}</li>
+                    </ul>
                 </div>
+                @endif
+                @if ($errors->has('last_name'))
+                <div class="error">
+                    <ul>
+                        <li>{{$errors->first('last_name')}}</li>
+                    </ul>
+                </div>
+                @endif
             </div>
         </div>
         <div class="form-sample__container">
@@ -59,9 +70,6 @@
                         </label>
                     </div>
                 </div>
-                <div class="form__error">
-                <!--バリデーション機能を実装したら記述します。-->
-                </div>
             </div>
         </div>
         <!--性別-->
@@ -75,9 +83,13 @@
                 <div class="form__input--text">
                     <input class="contact-form__item-input" type="email" name="email" value="{{ old('email') }}" />
                 </div>
-                <div class="form__error">
-                <!--バリデーション機能を実装したら記述します。-->
+                @if ($errors->has('email'))
+                <div class="error">
+                    <ul>
+                        <li>{{$errors->first('email')}}</li>
+                    </ul>
                 </div>
+                @endif
             </div>
         </div>
         <div class="form-sample__container">
@@ -96,9 +108,13 @@
                 <div class="form__input--text-postcode">
                     <input class="contact-form__item-input-postcode" type="postcode" name="postcode" value="{{ old('postcode') }}" />
                 </div>
-                <div class="form__error">
-                <!--バリデーション機能を実装したら記述します。-->
+                @if ($errors->has('postcode'))
+                <div class="error">
+                    <ul>
+                        <li>{{$errors->first('postcode')}}</li>
+                    </ul>
                 </div>
+                @endif
             </div>
         </div>
         <div class="form-sample__container">
@@ -117,9 +133,13 @@
                 <div class="form__input--text">
                     <input class="contact-form__item-input" type="text" name="address" value="{{ old('address') }}" />
                 </div>
-                <div class="form__error">
-                <!--バリデーション機能を実装したら記述します。-->
+                @if ($errors->has('address'))
+                <div class="error">
+                    <ul>
+                        <li>{{$errors->first('address')}}</li>
+                    </ul>
                 </div>
+                @endif
             </div>
         </div>
         <div class="form-sample__container">
@@ -136,9 +156,6 @@
             <div class="form__group-content">
                 <div class="form__input--text">
                     <input class="contact-form__item-input" type="text" name="building_name" value="{{ old('building_name') }}" />
-                </div>
-                <div class="form__error">
-                <!--バリデーション機能を実装したら記述します。-->
                 </div>
             </div>
         </div>
@@ -158,12 +175,19 @@
             <div class="form__input--textarea">
               <textarea class="contact-form__textarea-input" name="opinion" value="{{ old('content') }}"></textarea>
             </div>
+            @if ($errors->has('opinion'))
+            <div class="error">
+                <ul>
+                    <li>{{$errors->first('opinion')}}</li>
+                </ul>
+            </div>
+            @endif
           </div>
         </div>
         <!--ご意見-->
         <!--確認ボタン-->
         <div class="form__button">
-          <button class="form__button-submit" type="submit">確認</button>
+          <button class="form__button-submit" type="submit" action="/contacts/confirm">確認</button>
         </div>
         <!--確認ボタン-->
       </form>

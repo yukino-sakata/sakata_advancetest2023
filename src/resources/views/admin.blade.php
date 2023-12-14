@@ -71,6 +71,14 @@
                 </form>
             </div>
             <!--検索フォーム-->
+            <!--ページネーション-->
+            <div class="paginate">
+                <p class="count__content">全{{ $contacts->total() }}件中　{{ $contacts->firstItem() }}〜{{ $contacts->lastItem() }}件</p>
+                <div class="paginate__nav">
+                {{ $contacts->links('vendor.pagination.contacts') }}
+                </div>
+            </div>
+            <!--ページネーション-->
             <!--テーブル-->
             <div class="table-container">
                 <table class="contact-table">

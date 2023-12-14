@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Contact;
+use Illuminate\Pagination\Paginator;use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
     public function index(){
         return view('index');
+    }
+
+    public function back(){
+        return back()->withInput();
     }
 
     public function confirm(ContactRequest $request){
@@ -40,7 +44,7 @@ class ContactController extends Controller
     }
 
     public function admin(){
-        $contacts = Contact::all();
+        $contacts = Contact::Paginate(10);
         return view('admin', ['contacts' => $contacts]);
     }
 
@@ -49,15 +53,18 @@ class ContactController extends Controller
         return redirect('admin');
     }
 
-    public function search(Request $request){
+       public function search(Request $query){
+
         $contacts = Contact::
-        NameSearch($request->search_name)
-        ->GenderSearch($request->search_gender)
-        ->DateFromSearch($request->search_date__from)
-        ->DateToSearch($request->search_date__to)
-        ->EmailSearch($request->search_email)
+        NameSearch($query->search_name)
+        ->GenderSearch($query->search_gender)
+        ->DateFromSearch($query->search_date__from)
+        ->DateToSearch($query->search_date__to)
+        ->EmailSearch($query->search_email)
         ->get();
 
-        return view('admin', compact('contacts'));
+        return view('admin', ['contacts' => $contacts]);
     }
+
+
 }
